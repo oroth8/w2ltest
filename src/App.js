@@ -2,13 +2,6 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [formData, setFormData] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    if (window.location.search.includes("success=true")) {
-      setSuccess(true);
-    }
-  }, []);
 
   useEffect(() => {
     console.log(formData);
