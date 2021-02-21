@@ -44,8 +44,8 @@ const Form2 = () => {
           name,
           email,
           message,
-          "utm-medium": utmMedium,
-          "utm-source": utmSource,
+          utm_medium: utmMedium,
+          utm_source: utmSource,
         }),
       });
       console.log("success");
@@ -66,8 +66,8 @@ const Form2 = () => {
       data-netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="utm-medium" value={utmMedium} />
-      <input type="text" name="utm-source" value={utmSource} />
+      <input type="hidden" name="utm_medium" value={utmMedium} />
+      <input type="text" name="utm_source" value={utmSource} />
       <p>
         <label>
           Your Name:{" "}
