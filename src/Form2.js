@@ -14,14 +14,13 @@ const Form2 = () => {
       .join("&");
   };
 
-  const formData = { name, email, message };
-
   const handleSubmit = (e) => {
+    const formData = { name, email, message };
     try {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...formData }),
+        body: encode({ "form-name": "contact", formData }),
       });
       console.log("success");
       console.log(formData);
