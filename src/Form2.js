@@ -9,7 +9,6 @@ import Cookie from "js-cookie";
 // utm_content: Cookie.get('utm_content')
 
 const Form2 = () => {
-  ReactDOM.render(<Form2 />, document.getElementById("root"));
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
