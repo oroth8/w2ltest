@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Cookie from "js-cookie";
 
@@ -12,9 +12,11 @@ const Form2 = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [utmSource, setUtmSource] = useState("null");
+  const [utmMedium, setUtmMedium] = useState("");
 
-  const utmMedium = Cookie.get("utm_medium");
-  const utmSource = Cookie.get("utm_source");
+  // const utmMedium = Cookie.get("utm_medium");
+  // const utmSource = Cookie.get("utm_source");
 
   const encode = (data) => {
     return Object.keys(data)
@@ -24,8 +26,13 @@ const Form2 = () => {
       .join("&");
   };
 
+  useEffect(() => {
+    setUtmMedium(Cookie.get("utm_medium"));
+    setUtmSource(Cookie.get("utm_source"));
+  }, []);
+
   const handleSubmit = (e) => {
-    const formData = { name, email, message };
+    // const formData = { name, email, message };
     try {
       fetch("/", {
         method: "POST",
@@ -40,7 +47,8 @@ const Form2 = () => {
         }),
       });
       console.log("success");
-      console.log(formData);
+      console.log(Cookie.get("utm_medium"));
+      console.log(Cookie.get("utm_source"));
     } catch (error) {
       console.log(error);
     }
