@@ -41,7 +41,7 @@ const Form2 = () => {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
-          "form-name": "contact",
+          "form-name": "test",
           name,
           email,
           message,
@@ -62,12 +62,12 @@ const Form2 = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      name="contact"
+      name="test"
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="test" />
       <input type="hidden" name="utm_medium" value={utmMedium} />
       <input type="text" name="utm_source" value={utmSource} />
       <p>
