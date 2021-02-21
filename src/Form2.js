@@ -55,9 +55,9 @@ const Form2 = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="utm-medium" value={utmMedium} />
-      <input type="hidden" name="utm-soruce" value={utmSource} />
+      <input type="text" name="form-name" value="contact" />
+      <input type="text" name="utm-medium" value={utmMedium} />
+      <input type="text" name="utm-soruce" value={utmSource} />
       <p>
         <label>
           Your Name:{" "}
