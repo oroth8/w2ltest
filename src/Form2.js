@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import Cookie from "js-cookie";
+
+// utm_source: Cookie.get('utm_source'),
+// utm_medium: Cookie.get('utm_medium'),
+// utm_campaign: Cookie.get('utm_campaign'),
+// utm_term: Cookie.get('utm_term'),
+// utm_content: Cookie.get('utm_content')
 
 const Form2 = () => {
   const [name, setName] = useState("");
@@ -20,7 +27,14 @@ const Form2 = () => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", name, email, message }),
+        body: encode({
+          "form-name": "contact",
+          name,
+          email,
+          message,
+          utm_medium: Cookie.get("utm_medium"),
+          utm_source: Cookie.get("utm_source"),
+        }),
       });
       console.log("success");
       console.log(formData);
