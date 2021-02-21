@@ -13,6 +13,9 @@ const Form2 = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const utmMedium = Cookie.get("utm_medium");
+  const utmSource = Cookie.get("utm_source");
+
   const encode = (data) => {
     return Object.keys(data)
       .map(
@@ -32,8 +35,8 @@ const Form2 = () => {
           name,
           email,
           message,
-          utm_medium: Cookie.get("utm_medium"),
-          utm_source: Cookie.get("utm_source"),
+          utmMedium,
+          utmSource,
         }),
       });
       console.log("success");
@@ -53,6 +56,8 @@ const Form2 = () => {
       data-netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="utm-medium" value={utmMedium} />
+      <input type="hidden" name="utm-soruce" value={utmSource} />
       <p>
         <label>
           Your Name:{" "}
