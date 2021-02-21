@@ -27,8 +27,10 @@ const Form2 = () => {
   };
 
   useEffect(() => {
-    setUtmMedium(Cookie.get("utm_medium"));
-    setUtmSource(Cookie.get("utm_source"));
+    // setUtmMedium(Cookie.get("utm_medium"));
+    // setUtmSource(Cookie.get("utm_source"));
+    setUtmSource("Source");
+    setUtmMedium("Medium");
   }, []);
 
   const handleSubmit = (e) => {
@@ -63,8 +65,8 @@ const Form2 = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      <input type="text" name="form-name" value="contact" />
-      <input type="text" name="utm-medium" value={utmMedium} />
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="utm-medium" value={utmMedium} />
       <input type="text" name="utm-soruce" value={utmSource} />
       <p>
         <label>
