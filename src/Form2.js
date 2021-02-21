@@ -21,9 +21,10 @@ const Form2 = () => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", formData }),
+        body: encode({ "form-name": "contact", ...formData }),
       });
       console.log("success");
+      console.log(formData);
     } catch (error) {
       console.log(error);
     }
