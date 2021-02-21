@@ -12,6 +12,7 @@ const Form2 = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [test, setTest] = useState("");
   const [utmSource, setUtmSource] = useState("null");
   const [utmMedium, setUtmMedium] = useState("");
 
@@ -44,6 +45,7 @@ const Form2 = () => {
           name,
           email,
           message,
+          test,
           utm_medium: utmMedium,
           utm_source: utmSource,
         }),
@@ -97,6 +99,16 @@ const Form2 = () => {
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          Test:{" "}
+          <textarea
+            name="message"
+            value={test}
+            onChange={(e) => setTest(e.target.value)}
           />
         </label>
       </p>
